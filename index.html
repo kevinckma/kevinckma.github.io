@@ -130,6 +130,27 @@
   .ptitle { color: var(--text); }
   .venue { font-style: italic; }
   .doi { font-size: 0.85rem; white-space: nowrap; }
+  .abs-toggle {
+    font: inherit; font-size: 0.85rem; color: var(--muted);
+    background: none; border: 0; padding: 0; margin-left: 0.35rem; cursor: pointer;
+    white-space: nowrap;
+  }
+  .abs-toggle::after {
+    content: ""; display: inline-block; width: 0.38em; height: 0.38em;
+    margin-left: 0.4em; vertical-align: 0.2em;
+    border-right: 1.2px solid currentColor; border-bottom: 1.2px solid currentColor;
+    transform: rotate(45deg); transition: transform 0.25s ease;
+  }
+  .abs-toggle:hover, .abs-toggle[aria-expanded="true"] { color: var(--accent); }
+  .abs-toggle[aria-expanded="true"]::after { transform: translateY(0.15em) rotate(-135deg); }
+  .abs { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+  .abs.open { grid-template-rows: 1fr; }
+  .abs > div { overflow: hidden; }
+  .abs p {
+    margin: 0.6rem 0 0.3rem; padding: 0.85rem 1.1rem;
+    background: var(--bg); border-radius: 8px;
+    font-size: 0.88rem; line-height: 1.6; color: var(--text);
+  }
 
   /* Students */
   .people { list-style: none; margin: 0; padding: 0; }
@@ -213,7 +234,7 @@
 
     <h3>Peer-reviewed articles</h3>
     <ol class="pubs" reversed>
-      <li data-n="27"><span class="me">Ma KCK</span> et al. 2026. <span class="ptitle">Genetic evidence for the microphallid trematode <em>Maritrema gratiosum</em> in the Northeast Pacific and an overview of its global distribution.</span> <span class="venue">Journal of Helminthology</span> 100: e79. <a class="doi" href="https://doi.org/10.1017/S0022149X26101771">doi</a></li>
+      <li data-n="27"><span class="me">Ma KCK</span> et al. 2026. <span class="ptitle">Genetic evidence for the microphallid trematode <em>Maritrema gratiosum</em> in the Northeast Pacific and an overview of its global distribution.</span> <span class="venue">Journal of Helminthology</span> 100: e79. <a class="doi" href="https://doi.org/10.1017/S0022149X26101771">doi</a> <button class="abs-toggle" type="button" aria-expanded="false">Abstract</button><div class="abs"><div><p>The trematode <em>Maritrema gratiosum</em> Nicoll, 1907 has a heteroxenous life cycle comprising a marine gastropod as its first intermediate host, a barnacle as its second intermediate host, and a bird as its definitive host. Globally, the species is widely distributed from subtropical waters of the South China Sea to arctic waters of the Barents Sea. In European waters (namely, western Europe and the Barents Sea), the complete life cycle of <em>M. gratiosum</em> is known. Elsewhere in its range, however, its life cycle remains incompletely understood. Clarifying its distribution and resolving unknown host associations are essential for advancing a more holistic view of host–parasite dynamics and their ecological role in intertidal ecosystems. In this study, <em>M. gratiosum</em> was detected using DNA-based assays in individuals of the barnacle <em>Balanus glandula</em> Darwin, 1854 that were collected from the rocky intertidal zone along the southern coast of British Columbia, Canada. This finding provides the first molecular evidence of this trematode species in the Pacific, complementing earlier records. The same molecular approach can be extended to identify region-specific hosts, such as the first intermediate (molluscan) host in the Pacific region, which remains unidentified.</p></div></div></li>
       <li data-n="26">Pierrat J, <span class="me">Ma KCK</span>, Hamel J-F, Mercier A. 2026. <span class="ptitle">Spatial and size distributions of early recruits of <em>Cucumaria frondosa</em> in a coastal nursery (Nunavut, Canadian Arctic).</span> <span class="venue">Regional Studies in Marine Science</span> 96: 104920. <a class="doi" href="https://doi.org/10.1016/j.rsma.2026.104920">doi</a></li>
       <li data-n="25"><span class="me">Ma KCK</span>, Gover LE, Hamel J-F, Mercier A. 2026. <span class="ptitle">Optimizing the use of portable ROVs for community-based benthic surveys: A case study on the demographics of sea cucumbers around nursery habitats in the Arctic.</span> <span class="venue">Polar Science</span> 47: 101287. <a class="doi" href="https://doi.org/10.1016/j.polar.2025.101287">doi</a></li>
       <li data-n="24"><span class="me">Ma KCK</span>, Hamel J-F, Mercier A. 2026. <span class="ptitle">Proposed revision of ‘crystal cells’ as phagocytised metabolic by-products in holothuroid echinoderms.</span> <span class="venue">Journal of the Marine Biological Association of the UK</span> 106: e9. <a class="doi" href="https://doi.org/10.1017/S002531542510101X">doi</a></li>
@@ -304,5 +325,14 @@
   © 2026 Kevin C. K. Ma
 </footer>
 
+<script>
+  document.querySelectorAll('.abs-toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var open = b.getAttribute('aria-expanded') === 'true';
+      b.setAttribute('aria-expanded', String(!open));
+      b.nextElementSibling.classList.toggle('open', !open);
+    });
+  });
+</script>
 </body>
 </html>
