@@ -64,7 +64,15 @@
     padding: 2.25rem 2.5rem;
     margin-top: 1.5rem;
   }
-  header.intro { margin-top: 2.5rem; padding: 2.75rem 2.5rem; }
+  header.intro {
+    margin-top: 2.5rem; padding: 2.5rem;
+    display: flex; align-items: center; gap: 2.25rem;
+  }
+  .photo {
+    width: 150px; height: 150px; flex-shrink: 0;
+    border-radius: 50%; object-fit: cover; object-position: center 25%;
+    border: 1px solid var(--card-border);
+  }
   section > :last-child { margin-bottom: 0; }
   h1 {
     font-family: var(--sans); font-weight: 300; font-size: 2.2rem;
@@ -144,7 +152,8 @@
   @media (max-width: 640px) {
     h1 { font-size: 1.85rem; }
     header.intro, section { padding: 1.5rem 1.25rem; border-radius: 12px; margin-top: 1rem; }
-    header.intro { margin-top: 1.25rem; padding-top: 1.75rem; }
+    header.intro { margin-top: 1.25rem; padding-top: 1.75rem; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    .photo { width: 112px; height: 112px; }
     .nav-name { display: none; }
     .nav-links { gap: 0.9rem; font-size: 0.85rem; }
     .timeline li { grid-template-columns: 1fr; gap: 0; }
@@ -169,6 +178,7 @@
 
 <main>
   <header class="intro">
+    <img class="photo" src="https://kevinckma.weebly.com/uploads/2/4/4/2/24424179/profile-vancouver_orig.png" alt="Kevin C. K. Ma">
     <div>
       <h1>Kevin C. K. Ma</h1>
       <p class="role"><strong>Marine Ecologist</strong> · Postdoctoral Research Fellow<br>University of British Columbia · Hakai Institute</p>
