@@ -7,7 +7,7 @@
 <meta name="description" content="Kevin C. K. Ma — marine ecologist and postdoctoral research fellow at the University of British Columbia, studying rocky-shore intertidal ecology, biodiversity, and climate change.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f8f5ef;
@@ -19,7 +19,7 @@
     --accent: #1f6f78;
     --accent-soft: #eef4f3;
     --serif: "Tinos", "Times New Roman", Times, serif;
-    --sans: "Archivo Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --sans: "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color-scheme: light;
   }
   * { box-sizing: border-box; }
@@ -29,8 +29,9 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; text-underline-offset: 2px; }
@@ -47,7 +48,7 @@
     max-width: 860px; margin: 0 auto; padding: 0.8rem 1.25rem;
     display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   }
-  .nav-name { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; color: var(--text); }
+  .nav-name { font-family: var(--sans); font-weight: 400; font-size: 1.05rem; color: var(--text); }
   .nav-links { display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9rem; }
   .nav-links a { color: var(--muted); }
   .nav-links a:hover { color: var(--accent); text-decoration: none; }
@@ -66,14 +67,14 @@
   header.intro { margin-top: 2.5rem; padding: 2.75rem 2.5rem; }
   section > :last-child { margin-bottom: 0; }
   h1 {
-    font-family: var(--sans); font-weight: 600; font-size: 2.7rem;
+    font-family: var(--sans); font-weight: 300; font-size: 2.7rem;
     line-height: 1.15; margin: 0 0 0.4rem; letter-spacing: -0.01em;
   }
   .role { font-size: 1.1rem; color: var(--muted); margin: 0; }
-  .role strong { color: var(--text); font-weight: 500; }
+  .role strong { color: var(--text); font-weight: 400; }
   .links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.4rem; }
   .links a {
-    font-size: 0.88rem; font-weight: 500;
+    font-size: 0.88rem; font-weight: 400;
     padding: 0.35rem 0.85rem; border: 1px solid var(--rule); border-radius: 999px;
     color: var(--text);
   }
@@ -89,6 +90,10 @@
     margin: 2rem 0 0.9rem;
   }
   p { margin: 0 0 1rem; }
+  #about > p {
+    text-align: justify; text-indent: 1.75em;
+    hyphens: auto; -webkit-hyphens: auto;
+  }
 
   /* Timeline */
   .timeline { list-style: none; margin: 0; padding: 0; }
@@ -113,7 +118,7 @@
     color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums;
   }
   ol.pubs li[data-n]::before { content: attr(data-n); }
-  .me { font-weight: 600; }
+  .me { font-weight: 500; }
   .ptitle { font-family: var(--serif); font-size: 1.02rem; }
   .venue { font-style: italic; }
   .doi { font-size: 0.85rem; white-space: nowrap; }
@@ -122,7 +127,7 @@
   .people { list-style: none; margin: 0; padding: 0; }
   .people li { padding: 0.6rem 0; border-top: 1px solid var(--rule); font-size: 0.94rem; }
   .people li:last-child { border-bottom: 1px solid var(--rule); }
-  .people .name { font-weight: 600; }
+  .people .name { font-weight: 500; }
   .people .meta { color: var(--muted); font-size: 0.86rem; }
 
   .callout {
