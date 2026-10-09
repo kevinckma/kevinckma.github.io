@@ -99,7 +99,7 @@
     margin: 2rem 0 0.9rem;
   }
   p { margin: 0 0 1rem; }
-  #about > p {
+  #about > p, .about-intro > p {
     text-align: justify; text-indent: 3em; font-size: 0.94rem;
     hyphens: auto; -webkit-hyphens: auto;
   }
@@ -217,8 +217,11 @@
   .abs-dates dd { margin: 0; color: var(--text); }
   .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(20, 24, 26, 0.72); display: none; align-items: center; justify-content: center; padding: 1.5rem; cursor: zoom-out; }
   .lightbox.open { display: flex; }
-  .about-fig { margin: 1.4rem 0 0; }
-  .about-fig img { display: block; width: 100%; height: auto; border-radius: 10px; cursor: zoom-in; }
+  .about-intro { display: flex; gap: 1.6rem; align-items: flex-start; }
+  .about-intro > p { flex: 1; min-width: 0; margin: 0; }
+  .about-fig { flex: 0 0 42%; margin: 0.3rem 0 0; }
+  .about-fig img { display: block; width: 100%; height: auto; border-radius: 8px; cursor: zoom-in; box-shadow: 0 1px 4px rgba(60,45,20,0.08); }
+  @media (max-width: 640px) { .about-intro { flex-direction: column; gap: 1.1rem; } .about-fig { flex-basis: auto; width: 100%; } }
   .lightbox img.wide { max-width: 96vw; }
   .lightbox img { max-width: min(92vw, 820px); max-height: 92vh; width: auto; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
   .abs p {
@@ -325,8 +328,10 @@
 
   <section id="about">
     <h2>About</h2>
-    <p>Kevin is a marine ecologist and postdoc in the <a href="https://www.zoology.ubc.ca/harleylab/the_herd/" target="_blank" rel="noopener">Harley Lab</a> at the University of British Columbia, where he is measuring how thermal stress, habitat complexity, and keystone predation each contribute to intertidal biodiversity in the Salish Sea and, in a separate project, testing how experimental warming affects community stability using black- and white-bordered experimental tiles.</p>
-    <figure class="about-fig"><img class="zoomable" src="images/research-overview-1600.jpg" data-full="images/research-overview.jpg" alt="Research overview: (1) scale-dependent drivers of biodiversity — roles of environmental stress, habitat complexity, and predator control; (2) experimental warming under different salinity regimes — re-configuration of rocky-shore communities across the Salish Sea" loading="lazy"></figure>
+    <div class="about-intro">
+      <p>Kevin is a marine ecologist and postdoc in the <a href="https://www.zoology.ubc.ca/harleylab/the_herd/" target="_blank" rel="noopener">Harley Lab</a> at the University of British Columbia, where he is measuring how thermal stress, habitat complexity, and keystone predation each contribute to intertidal biodiversity in the Salish Sea and, in a separate project, testing how experimental warming affects community stability using black- and white-bordered experimental tiles.</p>
+      <figure class="about-fig"><img class="zoomable" src="images/research-overview-1200.jpg" data-full="images/research-overview.jpg" alt="Research overview: (1) scale-dependent drivers of biodiversity — roles of environmental stress, habitat complexity, and predator control; (2) experimental warming under different salinity regimes — re-configuration of rocky-shore communities across the Salish Sea" loading="lazy"></figure>
+    </div>
 
     <h3>Positions</h3>
     <ul class="timeline">
