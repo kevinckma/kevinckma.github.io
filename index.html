@@ -141,7 +141,7 @@
   .cgrid span::before { content: none; }
   .cbars { position: absolute; inset: 0; display: flex; align-items: flex-end; }
   .cbar { position: relative; flex: 1; height: var(--h); outline: none; }
-  .cbar::before { content: ""; position: absolute; left: 50%; bottom: 0; width: min(14px, 60%); height: 100%; transform: translateX(-50%); background: #b9c9c8; border-radius: 3px 3px 0 0; transition: background 0.15s; }
+  .cbar::before { content: ""; position: absolute; left: 50%; bottom: 0; width: min(14px, 60%); height: 100%; transform: translateX(-50%); background: #b9c9c8; transition: background 0.15s; }
   .cbar:hover::before, .cbar:focus::before { background: var(--accent); }
   .cval { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 3px; font-size: 0.72rem; color: var(--text); opacity: 0; transition: opacity 0.15s; pointer-events: none; }
   .cbar:hover .cval, .cbar:focus .cval { opacity: 1; }
