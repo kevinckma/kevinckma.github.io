@@ -134,6 +134,18 @@
     border-left: 0.56em solid #c9c3b8;
     border-top: 0.32em solid transparent; border-bottom: 0.32em solid transparent;
   }
+  .cites { margin: 1.25rem 0 0.5rem; max-width: 440px; }
+  .cites figcaption { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.7rem; }
+  .cplot { position: relative; height: 120px; margin-left: 1.6rem; }
+  .cgrid span { position: absolute; left: -1.6rem; right: 0; bottom: var(--g); border-top: 1px solid var(--rule); font-size: 0.7rem; color: var(--muted); line-height: 0; }
+  .cgrid span::before { content: none; }
+  .cbars { position: absolute; inset: 0; display: flex; align-items: flex-end; gap: 6px; }
+  .cbar { position: relative; flex: 1; height: var(--h); background: #b9c9c8; border-radius: 4px 4px 0 0; outline: none; transition: background 0.15s; }
+  .cbar:hover, .cbar:focus { background: var(--accent); }
+  .cval { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 3px; font-size: 0.72rem; color: var(--text); opacity: 0; transition: opacity 0.15s; pointer-events: none; }
+  .cbar:hover .cval, .cbar:focus .cval { opacity: 1; }
+  .cyears { display: flex; gap: 6px; margin-left: 1.6rem; margin-top: 0.35rem; }
+  .cyears span { flex: 1; text-align: center; font-size: 0.7rem; color: var(--muted); }
   .ptitle { color: var(--text); }
   .ptitle.book { font-style: italic; }
   .ptitle.book em { font-style: normal; }
@@ -255,6 +267,14 @@
   <section id="publications">
     <h2>Publications</h2>
     <p class="pub-summary"><span>27 peer-reviewed articles (20 as first author) · 10 other academic works</span><span>285 citations · h-index of 11 (<a href="https://scholar.google.com/citations?hl=en&amp;user=1VgV6HAAAAAJ" target="_blank" rel="noopener">Google Scholar</a> as of October 2026)</span></p>
+    <figure class="cites" aria-label="Citations per year on Google Scholar">
+      <figcaption>Citations per year</figcaption>
+      <div class="cplot">
+        <div class="cgrid"><span style="--g:80%">40</span><span style="--g:40%">20</span><span style="--g:0%">0</span></div>
+        <div class="cbars"><div class="cbar" style="--h:28.0%" tabindex="0" aria-label="2019: 14 citations"><span class="cval">14</span></div><div class="cbar" style="--h:38.0%" tabindex="0" aria-label="2020: 19 citations"><span class="cval">19</span></div><div class="cbar" style="--h:28.0%" tabindex="0" aria-label="2021: 14 citations"><span class="cval">14</span></div><div class="cbar" style="--h:64.0%" tabindex="0" aria-label="2022: 32 citations"><span class="cval">32</span></div><div class="cbar" style="--h:70.0%" tabindex="0" aria-label="2023: 35 citations"><span class="cval">35</span></div><div class="cbar" style="--h:34.0%" tabindex="0" aria-label="2024: 17 citations"><span class="cval">17</span></div><div class="cbar" style="--h:92.0%" tabindex="0" aria-label="2025: 46 citations"><span class="cval">46</span></div><div class="cbar" style="--h:90.0%" tabindex="0" aria-label="2026: 45 citations"><span class="cval">45</span></div></div>
+      </div>
+      <div class="cyears"><span>2019</span><span>2020</span><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
+    </figure>
 
     <h3>Peer-reviewed articles</h3>
     <ol class="pubs" reversed>
