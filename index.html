@@ -107,13 +107,14 @@
   /* Timeline */
   .timeline { list-style: none; margin: 0; padding: 0; }
   .timeline li {
-    display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem;
+    display: grid; grid-template-columns: 7.5rem 1fr auto; gap: 1rem; align-items: center;
     padding: 0.55rem 0; border-top: 1px solid var(--rule);
   }
   .timeline li:last-child { border-bottom: 1px solid var(--rule); }
   .timeline .yr { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.92rem; }
   .timeline .what { font-size: 0.95rem; }
   .timeline .what span { color: var(--muted); }
+  .timeline .logo { height: 26px; width: auto; max-width: 56px; object-fit: contain; display: block; justify-self: end; }
 
   /* Publications */
   ol.pubs { margin: 0; padding-left: 0; list-style: none; counter-reset: pub; }
@@ -217,7 +218,10 @@
     .photo { width: 112px; height: 112px; }
     .nav-name { display: none; }
     .nav-links { gap: 1rem; font-size: 0.92rem; }
-    .timeline li { grid-template-columns: 1fr; gap: 0; }
+    .timeline li { grid-template-columns: 1fr auto; column-gap: 0.75rem; row-gap: 0; }
+    .timeline .yr { grid-column: 1; }
+    .timeline .what { grid-column: 1; }
+    .timeline .logo { grid-column: 2; grid-row: 1 / span 2; }
     ol.pubs li { padding-left: 2.1rem; }
     ol.pubs li::before { width: 1.6rem; }
   }
@@ -260,16 +264,16 @@
 
     <h3>Positions</h3>
     <ul class="timeline">
-      <li><span class="yr">2025–present</span><span class="what">Postdoctoral Research Fellow <span>· University of British Columbia</span></span></li>
-      <li><span class="yr">2022–2024</span><span class="what">Postdoctoral Fellow <span>· Memorial University of Newfoundland</span></span></li>
-      <li><span class="yr">2019–2022</span><span class="what">Postdoctoral Research Fellow <span>· Rhodes University</span></span></li>
+      <li><span class="yr">2025–present</span><span class="what">Postdoctoral Research Fellow <span>· University of British Columbia</span></span><img class="logo" src="logos/ubc.png" alt="UBC" loading="lazy"></li>
+      <li><span class="yr">2022–2024</span><span class="what">Postdoctoral Fellow <span>· Memorial University of Newfoundland</span></span><img class="logo" src="logos/memorial.png" alt="Memorial University" loading="lazy"></li>
+      <li><span class="yr">2019–2022</span><span class="what">Postdoctoral Research Fellow <span>· Rhodes University</span></span><img class="logo" src="logos/rhodes.png" alt="Rhodes University" loading="lazy"></li>
     </ul>
 
     <h3>Education</h3>
     <ul class="timeline">
-      <li><span class="yr">2020</span><span class="what">PhD, Oceanography <span>· Université Laval</span></span></li>
-      <li><span class="yr">2012</span><span class="what">MSc, Biology <span>· Memorial University of Newfoundland</span></span></li>
-      <li><span class="yr">2008</span><span class="what">BSc, Ecology &amp; Environmental Biology <span>· University of British Columbia</span></span></li>
+      <li><span class="yr">2020</span><span class="what">PhD, Oceanography <span>· Université Laval</span></span><img class="logo" src="logos/laval.png" alt="Université Laval" loading="lazy"></li>
+      <li><span class="yr">2012</span><span class="what">MSc, Biology <span>· Memorial University of Newfoundland</span></span><img class="logo" src="logos/memorial.png" alt="Memorial University" loading="lazy"></li>
+      <li><span class="yr">2008</span><span class="what">BSc, Ecology &amp; Environmental Biology <span>· University of British Columbia</span></span><img class="logo" src="logos/ubc.png" alt="UBC" loading="lazy"></li>
     </ul>
   </section>
 
