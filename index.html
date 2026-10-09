@@ -217,6 +217,9 @@
   .abs-dates dd { margin: 0; color: var(--text); }
   .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(20, 24, 26, 0.72); display: none; align-items: center; justify-content: center; padding: 1.5rem; cursor: zoom-out; }
   .lightbox.open { display: flex; }
+  .about-fig { margin: 1.4rem 0 0; }
+  .about-fig img { display: block; width: 100%; height: auto; border-radius: 10px; cursor: zoom-in; }
+  .lightbox img.wide { max-width: 96vw; }
   .lightbox img { max-width: min(92vw, 820px); max-height: 92vh; width: auto; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
   .abs p {
     margin: 0 0 0.5rem;
@@ -323,6 +326,7 @@
   <section id="about">
     <h2>About</h2>
     <p>Kevin is a marine ecologist and postdoc in the <a href="https://www.zoology.ubc.ca/harleylab/the_herd/" target="_blank" rel="noopener">Harley Lab</a> at the University of British Columbia, where he is measuring how thermal stress, habitat complexity, and keystone predation each contribute to intertidal biodiversity in the Salish Sea and, in a separate project, testing how experimental warming affects community stability using black- and white-bordered experimental tiles.</p>
+    <figure class="about-fig"><img class="zoomable" src="images/research-overview-1600.jpg" data-full="images/research-overview.jpg" alt="Research overview: (1) scale-dependent drivers of biodiversity — roles of environmental stress, habitat complexity, and predator control; (2) experimental warming under different salinity regimes — re-configuration of rocky-shore communities across the Salish Sea" loading="lazy"></figure>
 
     <h3>Positions</h3>
     <ul class="timeline">
@@ -509,8 +513,8 @@
   (function () {
     var lb = document.getElementById('lightbox'), im = lb.querySelector('img');
     document.addEventListener('click', function (e) {
-      var t = e.target.closest('.abs-thumb');
-      if (t) { im.src = t.dataset.full || t.src; im.alt = t.alt; lb.classList.add('open'); return; }
+      var t = e.target.closest('.abs-thumb, .zoomable');
+      if (t) { im.src = t.dataset.full || t.src; im.alt = t.alt; im.classList.toggle('wide', t.classList.contains('zoomable')); lb.classList.add('open'); return; }
       if (e.target.closest('#lightbox')) lb.classList.remove('open');
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
