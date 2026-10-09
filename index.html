@@ -241,7 +241,12 @@
   .announce { margin: 0 0 1.5rem; font-size: 0.92rem; }
   .announce p { text-indent: 3em; }
   .announce-list ul { list-style: none; margin: 0; padding: 0; }
-  .announce-list li { display: flex; gap: 0.9rem; padding: 0.15rem 0; }
+  .announce-list li { position: relative; padding: 0.15rem 0 0.15rem 1.2em; }
+  .announce-list li::before {
+    content: ""; position: absolute; left: 0.1em; top: calc(0.15rem + 0.55em);
+    border-left: 0.56em solid #c9c3b8;
+    border-top: 0.32em solid transparent; border-bottom: 0.32em solid transparent;
+  }
   .announce-list .atext { flex: 1; min-width: 0; }
   .announce-list .adate { flex: 0 0 4.6rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
   .announce-label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
@@ -308,6 +313,7 @@
     <div class="callout announce announce-list">
       <span class="announce-label">Announcements</span>
       <ul>
+        <li><span class="atext">Attending the Sentinels of Change Fall Team Meeting</span></li>
         <li><span class="atext">Attending the <a href="https://www.wsn-online.org/" target="_blank" rel="noopener">Western Society of Naturalists 107th Annual Meeting</a> in Sacramento, California (12–15 November)</span></li>
         <li><span class="atext">Teaching <a href="https://biol326.wordpress.com" target="_blank" rel="noopener">BIOL 326: Experimental Biology of Invertebrates</a> at the University of British Columbia (January–April)</span></li>
       </ul>
