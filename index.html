@@ -220,9 +220,9 @@
   .about-intro { display: flex; gap: 1.6rem; align-items: flex-start; }
   .about-intro > p { flex: 1; min-width: 0; margin: 0; }
   .about-fig { flex: 0 0 42%; margin: 0.3rem 0 0; }
-  .about-fig img { display: block; width: 100%; height: auto; border-radius: 8px; cursor: zoom-in; box-shadow: 0 1px 4px rgba(60,45,20,0.08); }
+  .about-fig img { display: block; width: 100%; height: auto; box-sizing: border-box; padding: 16px; background: #fff; border-radius: 10px; cursor: zoom-in; box-shadow: 0 1px 4px rgba(60,45,20,0.08); }
   @media (max-width: 640px) { .about-intro { flex-direction: column; gap: 1.1rem; } .about-fig { flex-basis: auto; width: 100%; } }
-  .lightbox img.wide { max-width: 96vw; }
+  .lightbox img.wide { max-width: 96vw; padding: 2rem; box-sizing: border-box; }
   .lightbox img { max-width: min(92vw, 820px); max-height: 92vh; width: auto; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
   .abs p {
     margin: 0 0 0.5rem;
