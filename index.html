@@ -128,8 +128,12 @@
   ol.pubs li[data-n]::before { content: attr(data-n); }
   .me { font-weight: 500; }
   .pub-summary { color: var(--muted); font-size: 0.92rem; }
-  .pub-summary span { display: block; padding-left: 1.1em; text-indent: -1.1em; }
-  .pub-summary span::before { content: "▸"; display: inline-block; width: 1.1em; text-indent: 0; font-size: 0.8em; }
+  .pub-summary span { display: block; position: relative; padding-left: 1.2em; }
+  .pub-summary span::before {
+    content: ""; position: absolute; left: 0.1em; top: 0.5em;
+    border-left: 0.56em solid #c9c3b8;
+    border-top: 0.32em solid transparent; border-bottom: 0.32em solid transparent;
+  }
   .ptitle { color: var(--text); }
   .ptitle.book { font-style: italic; }
   .ptitle.book em { font-style: normal; }
