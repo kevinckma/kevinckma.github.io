@@ -136,9 +136,10 @@
     border-left: 0.56em solid #c9c3b8;
     border-top: 0.32em solid transparent; border-bottom: 0.32em solid transparent;
   }
-  .links.pub-jump { margin: 0 0 1.25rem; }
+  .links.pub-jump { margin: 0 0 1rem; }
   .pub-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
-  .pub-head .pub-summary { margin: 0; flex: 1 1 320px; }
+  .pub-head .pub-left { flex: 1 1 320px; }
+  .pub-head .pub-summary { margin: 0; }
   .cites { margin: 0; width: 196px; flex: 0 0 auto; }
   .cites figcaption { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; text-align: center; }
   .cscroll { overflow-x: auto; scrollbar-width: none; }
@@ -301,13 +302,15 @@
 
   <section id="publications">
     <h2>Publications</h2>
-    <div class="links pub-jump">
+    <div class="pub-head">
+      <div class="pub-left">
+      <div class="links pub-jump">
       <a href="#pub-articles">Peer-reviewed articles</a>
       <a href="#pub-other">Other academic works</a>
-      <a href="#pub-datasets">Archived datasets</a>
+      <a href="#pub-datasets">Datasets</a>
     </div>
-    <div class="pub-head">
       <p class="pub-summary"><span>27 peer-reviewed articles (20 as first author) · 10 other academic works</span><span>285 citations · h-index of 11 (<a href="https://scholar.google.com/citations?hl=en&amp;user=1VgV6HAAAAAJ" target="_blank" rel="noopener">Google Scholar</a> as of October 2026)</span></p>
+      </div>
       <figure class="cites" aria-label="Citations per year on Google Scholar">
         <figcaption>Citations per year</figcaption>
         <div class="cscroll"><div class="cinner"><div class="ccol" tabindex="0" aria-label="2013: 2 citations"><div class="cbar" style="--h:4.0%"><span class="cval">2</span></div><span class="cyr">2013</span></div><div class="ccol" tabindex="0" aria-label="2014: 3 citations"><div class="cbar" style="--h:6.0%"><span class="cval">3</span></div><span class="cyr">2014</span></div><div class="ccol" tabindex="0" aria-label="2015: 5 citations"><div class="cbar" style="--h:10.0%"><span class="cval">5</span></div><span class="cyr">2015</span></div><div class="ccol" tabindex="0" aria-label="2016: 27 citations"><div class="cbar" style="--h:54.0%"><span class="cval">27</span></div><span class="cyr">2016</span></div><div class="ccol" tabindex="0" aria-label="2017: 11 citations"><div class="cbar" style="--h:22.0%"><span class="cval">11</span></div><span class="cyr">2017</span></div><div class="ccol" tabindex="0" aria-label="2018: 10 citations"><div class="cbar" style="--h:20.0%"><span class="cval">10</span></div><span class="cyr">2018</span></div><div class="ccol" tabindex="0" aria-label="2019: 14 citations"><div class="cbar" style="--h:28.0%"><span class="cval">14</span></div><span class="cyr">2019</span></div><div class="ccol" tabindex="0" aria-label="2020: 19 citations"><div class="cbar" style="--h:38.0%"><span class="cval">19</span></div><span class="cyr">2020</span></div><div class="ccol" tabindex="0" aria-label="2021: 14 citations"><div class="cbar" style="--h:28.0%"><span class="cval">14</span></div><span class="cyr">2021</span></div><div class="ccol" tabindex="0" aria-label="2022: 32 citations"><div class="cbar" style="--h:64.0%"><span class="cval">32</span></div><span class="cyr">2022</span></div><div class="ccol" tabindex="0" aria-label="2023: 35 citations"><div class="cbar" style="--h:70.0%"><span class="cval">35</span></div><span class="cyr">2023</span></div><div class="ccol" tabindex="0" aria-label="2024: 17 citations"><div class="cbar" style="--h:34.0%"><span class="cval">17</span></div><span class="cyr">2024</span></div><div class="ccol" tabindex="0" aria-label="2025: 46 citations"><div class="cbar" style="--h:92.0%"><span class="cval">46</span></div><span class="cyr">2025</span></div><div class="ccol active" tabindex="0" aria-label="2026: 45 citations"><div class="cbar" style="--h:90.0%"><span class="cval">45</span></div><span class="cyr">2026</span></div></div></div>
@@ -360,7 +363,7 @@
       <li data-n="1"><span class="me">Ma KCK</span>, Deibel D, McKenzie C. 2011. <span class="ptitle">Indigenous and non-indigenous ascidian tunicates of Newfoundland and Labrador.</span> <span class="venue">Proceedings of the Contributed Papers of the 27th Annual General Meeting of the Aquaculture Association of Canada</span>, Aquaculture Association of Canada Special Publication No. 17: 58–63.<div class="actions"><button class="abs-toggle" type="button" aria-expanded="false">abstract</button><span class="sep">·</span><a class="oa" href="https://aquacultureassociation.ca/wp-content/uploads/bsk-pdf-manager/2017/08/AC2010-Proceedings.pdf" target="_blank" rel="noopener">open access (pdf)</a></div><div class="abs"><div><div class="abs-body"><p>Ascidian tunicates (sea squirts) can be aggressive invaders that grow over shellfish (e.g., mussels) and consequently out-compete them for space, and perhaps for food. The recent discovery of non-indigenous ascidians in Newfoundland and Labrador warrants the compilation of a comprehensive checklist of ascidian species to provide insight into the diversity of local ascidians and a basis for future comparisons with neighbouring marine environments. We have conducted a thorough literature review, search of online databases, and our own field collections to assemble the first comprehensive checklist of ascidian species for insular Newfoundland and mainland Labrador. A total of 38 ascidian species have been reported from the cold ocean waters of Newfoundland and Labrador since 1860. Among them are two non-indigenous, colonial ascidians, <em>Botrylloides violaceus</em> (Oka, 1927) and <em>Botryllus schlosseri</em> (Pallas, 1766), which have had an impact on aquaculture sustainability in Atlantic Canada. Our field collections are the first reports of these invasive, encrusting, marine invertebrates to have survived the winter as established resident populations on Newfoundland’s south coast.</p></div></div></div></li>
     </ol>
 
-    <h3 id="pub-datasets">Archived datasets</h3>
+    <h3 id="pub-datasets">Datasets</h3>
     <ol class="pubs" reversed>
       <li data-n="12">Canadian BioGenome Project. 2024. <span class="ptitle book"><em>Solaster endeca</em> genome assembly.</span> Principal haplotype (GCA_041228555.1), alternate haplotype (GCA_041228535.1). GenBank, National Center for Biotechnology Information. Specimens provided by <span class="me">Ma KCK</span>, Hamel J-F, and Mercier A.<div class="actions"><a class="oa" href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_041228555.1/" target="_blank" rel="noopener">principal haplotype (url)</a><span class="sep">·</span><a class="oa" href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_041228535.1/" target="_blank" rel="noopener">alternate haplotype (url)</a></div></li>
       <li data-n="11">Canadian BioGenome Project. 2024. <span class="ptitle book"><em>Echinarachnius parma</em> genome assembly.</span> Principal haplotype (GCA_037951105.1), alternate haplotype (GCA_037951085.1). GenBank, National Center for Biotechnology Information. Specimens provided by <span class="me">Ma KCK</span>, Hamel J-F, and Mercier A.<div class="actions"><a class="oa" href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_037951105.1/" target="_blank" rel="noopener">principal haplotype (url)</a><span class="sep">·</span><a class="oa" href="https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_037951085.1/" target="_blank" rel="noopener">alternate haplotype (url)</a></div></li>
