@@ -159,8 +159,9 @@
   .cinner:hover .ccol.active:not(:hover) .cbar::before { background: #b9c9c8; }
   .cinner:hover .ccol.active:not(:hover) .cval { opacity: 0; }
   .cyr { font-size: 0.6rem; color: var(--muted); margin-top: 3px; border-top: 1px solid var(--rule); width: 100%; text-align: center; padding-top: 2px; }
-  .contact-wrap { display: flex; gap: 2rem; align-items: center; }
-  .contact-text { flex: 1 1 auto; }
+  .contact-wrap { display: flex; gap: 2rem; align-items: flex-start; }
+  .contact-text { flex: 1 1 auto; font-size: 0.92rem; }
+  .contact-text p:first-child { margin-top: -0.3em; }
   .contact-text p:last-child { margin-bottom: 0; }
   .contact-photo { flex: 0 0 42%; width: 42%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 12px; display: block; }
   @media (max-width: 640px) { .contact-wrap { flex-direction: column; align-items: stretch; gap: 1.25rem; } .contact-photo { width: 100%; flex-basis: auto; } }
