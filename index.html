@@ -263,6 +263,8 @@
     border-left: 0.56em solid #c9c3b8;
     border-top: 0.32em solid transparent; border-bottom: 0.32em solid transparent;
   }
+  .past-toggle { display: inline-block; margin-top: 0.6rem; font-size: inherit; }
+  .announce-list .past > div > ul { padding-top: 0.5rem; }
   .announce-list .atext { flex: 1; min-width: 0; }
   .announce-list .adate { flex: 0 0 4.6rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
   .announce-label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
@@ -350,10 +352,19 @@
     <div class="callout announce announce-list">
       <span class="announce-label">Upcoming activities</span>
       <ul>
-        <li><span class="atext">Attending the <a href="https://sentinels.hakai.org" target="_blank" rel="noopener">Sentinels of Change Fall Team Meeting</a> (22–23 Oct 2026)</span></li>
-        <li><span class="atext">Attending the <a href="https://www.wsn-online.org/" target="_blank" rel="noopener">Western Society of Naturalists 107th Annual Meeting</a> (12–15 Nov 2026)</span></li>
+        <li><span class="atext">Attending the <a href="https://sentinels.hakai.org" target="_blank" rel="noopener">Sentinels of Change Fall Team Meeting</a> (22–23&nbsp;Oct&nbsp;2026)</span></li>
+        <li><span class="atext">Attending the <a href="https://www.wsn-online.org/" target="_blank" rel="noopener">Western Society of Naturalists 107th Annual Meeting</a> (12–15&nbsp;Nov&nbsp;2026)</span></li>
         <li><span class="atext">Teaching <a href="https://biol326.wordpress.com" target="_blank" rel="noopener">BIOL 326: Experimental Biology of Invertebrates</a> (Jan–Apr 2027)</span></li>
       </ul>
+      <button class="abs-toggle past-toggle" type="button" aria-expanded="false">past activities</button>
+      <div class="abs past"><div>
+      <ul>
+        <li><span class="atext">Served on the science delegation for the <a href="https://greencollege.ubc.ca/events/ed-yong-ubc-green-college" target="_blank" rel="noopener">Green College Dal Grauer Memorial Lecture</a> by Ed Yong (17&nbsp;Sep&nbsp;2026)</span></li>
+        <li><span class="atext">Completed the Instructional Skills Workshop (18&nbsp;&amp;&nbsp;25–26&nbsp;Jul&nbsp;2026)</span></li>
+        <li><span class="atext">Attended the <a href="https://sentinels.hakai.org" target="_blank" rel="noopener">Sentinels of Change Spring Team Meeting</a> (1–2&nbsp;Apr&nbsp;2026)</span></li>
+        <li><span class="atext">Attended the <a href="https://agu.org/osm26" target="_blank" rel="noopener">2026 Ocean Sciences Meeting</a> in Glasgow (22–27&nbsp;Feb&nbsp;2026)</span></li>
+      </ul>
+      </div></div>
     </div>
   </section>
 
@@ -500,7 +511,8 @@
     b.addEventListener('click', function () {
       var open = b.getAttribute('aria-expanded') === 'true';
       b.setAttribute('aria-expanded', String(!open));
-      b.closest('li').querySelector('.abs').classList.toggle('open', !open);
+      var li = b.closest('li'), box = li ? li.querySelector('.abs') : b.nextElementSibling;
+      box.classList.toggle('open', !open);
     });
   });
 </script>
