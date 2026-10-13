@@ -17,10 +17,10 @@ jobs:
   sort:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - run: npm install -g staticrypt@3.5.4
       - name: Re-sort manuscript boxes (newest first)
         env:
