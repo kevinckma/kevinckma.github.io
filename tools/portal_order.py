@@ -15,11 +15,12 @@ How it works
   are then sorted newest first. Nothing else on the page is touched.
 """
 import hashlib, re, sys
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 path = sys.argv[1]
 html = open(path, encoding="utf-8").read()
-now = datetime.now(timezone(timedelta(hours=-7))).strftime("%Y-%m-%dT%H:%M")  # Vancouver (PDT)
+now = datetime.now(ZoneInfo("America/Vancouver")).strftime("%Y-%m-%dT%H:%M")
 
 sec_start = html.index('<section id="manuscripts">')
 sec_end = html.index('</section>', sec_start)

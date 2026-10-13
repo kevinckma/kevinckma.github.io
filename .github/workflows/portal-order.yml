@@ -1,0 +1,38 @@
+name: Sort research portal manuscripts
+
+on:
+  push:
+    branches: [main]
+    paths: [research/index.html]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portal-order
+  cancel-in-progress: false
+
+jobs:
+  sort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g staticrypt@3.5.4
+      - name: Re-sort manuscript boxes (newest first)
+        env:
+          PORTAL_PASSWORD: ${{ secrets.PORTAL_PASSWORD }}
+        run: |
+          if [ -z "$PORTAL_PASSWORD" ]; then echo "PORTAL_PASSWORD secret not set; skipping."; exit 0; fi
+          tools/portal_rebuild.sh
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Research portal: re-sort manuscripts (automatic)"
+          git pull --rebase origin main
+          git push

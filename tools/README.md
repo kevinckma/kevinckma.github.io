@@ -1,18 +1,19 @@
 # Research portal tools
 
-## Manuscript order (newest first)
+## Manuscript order (newest first) — automatic
 
-The manuscript boxes on the research portal, and the thumbnails at the top of
-the page, are ordered automatically: the box changed most recently comes first.
+The manuscript boxes on the research portal, and the thumbnails at the top of the
+page, are ordered so the box changed most recently comes first.
 
-After any edit to the portal page:
+This happens automatically: whenever `research/index.html` is pushed to GitHub,
+the "Sort research portal manuscripts" workflow (`.github/workflows/portal-order.yml`)
+decrypts the page, runs `tools/portal_order.py`, re-encrypts it and commits the
+result. It needs the portal password saved as the repository secret `PORTAL_PASSWORD`.
 
-1. Decrypt it (run from a folder whose `.staticrypt.json` holds the portal's salt):
-   `staticrypt research/index.html --decrypt -p "$PASSWORD" -d /tmp/portal`
-2. Make the edit in `/tmp/portal/index.html`.
-3. `python3 tools/portal_order.py /tmp/portal/index.html`
-   (stamps any changed box with the current time and re-sorts the boxes)
-4. Re-encrypt with the same salt and the usual template options, re-apply the
-   login-page styling, and copy the result back to `research/index.html`.
+To do the same by hand: `PORTAL_PASSWORD=... tools/portal_rebuild.sh`
 
-The script only reads and writes the decrypted page; it holds no passwords.
+- `portal_order.py`: stamps any box whose content changed with the current time and sorts the boxes
+- `portal_rebuild.sh`: decrypt, sort, re-encrypt (same salt and template), re-apply styling
+- `portal_style.py`: login-page styling applied after encryption
+
+No passwords are stored in this folder.
