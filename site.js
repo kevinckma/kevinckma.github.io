@@ -1,15 +1,13 @@
 /* Shared by every page of kevinckma.github.io (main site, research portal and its login page).
-   1. Light / dark theme: follows the device setting until the visitor picks one with the
-      nav button; the choice is remembered (localStorage) and shared by all pages.
+   1. Light / dark theme: always light unless the visitor picks dark with the nav button;
+      the choice is remembered (localStorage) and shared by all pages.
    2. "Skip to content" link for keyboard users.
    3. Keyboard access to enlargeable images and their popups (Enter/Space opens,
       focus moves into the popup, Tab stays there, Escape/Close returns focus).
    Loaded synchronously in <head> so the theme is set before the page is drawn. */
 (function () {
   var KEY = 'theme', root = document.documentElement;
-  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
   function saved() { try { var t = localStorage.getItem(KEY); return t === 'dark' || t === 'light' ? t : null; } catch (e) { return null; } }
-  function system() { return mq && mq.matches ? 'dark' : 'light'; }
   function apply(t) {
     root.setAttribute('data-theme', t);
     var b = document.querySelector('.theme-toggle');
@@ -18,9 +16,8 @@
       b.title = t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
     }
   }
-  apply(saved() || system());
-  if (mq && mq.addEventListener) mq.addEventListener('change', function () { if (!saved()) apply(system()); });
-  window.addEventListener('storage', function (e) { if (e.key === KEY) apply(saved() || system()); });
+  apply(saved() || 'light');   // light unless the visitor has chosen dark with the nav button
+  window.addEventListener('storage', function (e) { if (e.key === KEY) apply(saved() || 'light'); });
 
   var ICONS = '<svg class="ti-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>' +
     '<svg class="ti-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>';
