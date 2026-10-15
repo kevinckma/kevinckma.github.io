@@ -1,0 +1,123 @@
+/* Shared by every page of kevinckma.github.io: dark theme, theme button, skip link,
+   keyboard focus for enlargeable images and the popup Close button. See site.js. */
+
+/* ---------- Theme button (added to the nav by site.js) ---------- */
+.theme-toggle {
+  font: inherit; background: none; border: 0; padding: 0.15rem; margin: 0; cursor: pointer;
+  color: var(--muted, #5f676b); display: inline-flex; align-items: center; align-self: center; border-radius: 6px;
+}
+.theme-toggle:hover { color: var(--accent, #1f6f78); }
+.theme-toggle svg { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .ti-sun { display: none; }
+html[data-theme="dark"] .theme-toggle .ti-sun { display: block; }
+html[data-theme="dark"] .theme-toggle .ti-moon { display: none; }
+
+/* ---------- Skip link: hidden until it receives keyboard focus ---------- */
+.skip-link {
+  position: fixed; left: 1rem; top: 0.6rem; z-index: 100; transform: translateY(-200%);
+  background: var(--accent, #1f6f78); color: #fff !important; padding: 0.5rem 1rem; border-radius: 8px;
+  font-weight: 600; font-size: 0.95rem; text-decoration: none !important;
+}
+.skip-link:focus { transform: none; outline: 2px solid var(--text, #1d2327); outline-offset: 2px; }
+main:focus { outline: none; }
+
+/* ---------- Keyboard focus ---------- */
+[data-kb]:focus-visible, .theme-toggle:focus-visible, .lb-close:focus-visible {
+  outline: 2px solid var(--accent, #1f6f78); outline-offset: 3px;
+}
+.lb-close {
+  position: fixed; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border-radius: 50%;
+  border: 0; background: rgba(255, 255, 255, 0.92); color: #1d2327; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.lb-close svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.lb-close:focus-visible { outline-color: #fff; }
+
+/* ---------- Dark theme ---------- */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14181a;
+  --card: #1c2124;
+  --text: #e2e6e4;
+  --muted: #a5adb0;
+  --rule: #2c3337;
+  --card-border: #2a3135;
+  --accent: #6cc0c8;
+  --accent-soft: #1b2d30;
+}
+html[data-theme="dark"] body { background: var(--bg); color: var(--text); }
+
+/* nav bars (main site and portal) */
+html[data-theme="dark"] nav, html[data-theme="dark"] nav.topnav { background: rgba(28, 33, 36, 0.78); border-bottom-color: var(--rule); }
+html[data-theme="dark"] nav.topnav .nav-name { color: var(--text); }
+html[data-theme="dark"] nav.topnav .nav-links a { color: var(--muted); }
+html[data-theme="dark"] nav.topnav .nav-links a:hover { color: var(--accent); }
+
+/* small arrow bullets */
+html[data-theme="dark"] .pub-summary span::before, html[data-theme="dark"] .announce-list li::before,
+html[data-theme="dark"] ul.res li::before, html[data-theme="dark"] .post-pts li::before { border-left-color: #59636a; }
+
+/* light grey labels (Abstract, Open access, DOIs ...) */
+html[data-theme="dark"] .abs-toggle, html[data-theme="dark"] .oa, html[data-theme="dark"] .abs-supp a,
+html[data-theme="dark"] .pd-toggle, html[data-theme="dark"] .pd-doi { color: #8d9699; }
+html[data-theme="dark"] .abs-toggle:hover, html[data-theme="dark"] .abs-toggle[aria-expanded="true"],
+html[data-theme="dark"] .oa:hover, html[data-theme="dark"] .abs-supp a:hover { color: var(--accent); }
+
+/* citation chart */
+html[data-theme="dark"] .cbar::before, html[data-theme="dark"] .cinner:hover .ccol.active:not(:hover) .cbar::before { background: #3e5c5f; }
+html[data-theme="dark"] .ccol:hover .cbar::before, html[data-theme="dark"] .ccol:focus .cbar::before,
+html[data-theme="dark"] .ccol.active .cbar::before { background: var(--accent); }
+html[data-theme="dark"] .cinner:hover .ccol.active:hover .cbar::before { background: var(--accent); }
+html[data-theme="dark"] .cslider::-webkit-slider-thumb { background: #4a5459; }
+html[data-theme="dark"] .cslider::-moz-range-thumb { background: #4a5459; }
+html[data-theme="dark"] .cslider:hover::-webkit-slider-thumb, html[data-theme="dark"] .cslider:focus::-webkit-slider-thumb { background: var(--accent); }
+html[data-theme="dark"] .cslider:hover::-moz-range-thumb, html[data-theme="dark"] .cslider:focus::-moz-range-thumb { background: var(--accent); }
+
+html[data-theme="dark"] .people .sphoto { background: #2a3033; }
+
+/* figures keep a white backing so the plots read as printed */
+html[data-theme="dark"] .about-fig img { box-shadow: none; }
+html[data-theme="dark"] .ms-fig, html[data-theme="dark"] .ms-pub-fig { background: #232a2d; border-color: var(--rule); }
+html[data-theme="dark"] .ms-pub-fig:hover, html[data-theme="dark"] .ms-pub-fig:focus-visible { border-color: var(--accent); }
+html[data-theme="dark"] .ms-fig img, html[data-theme="dark"] .ms-pub-img img { background: #fff; border-radius: 4px; }
+
+/* portal: pills, thumbnails, feed and posts */
+html[data-theme="dark"] .links a, html[data-theme="dark"] .feed-shuffle, html[data-theme="dark"] .bird-presets button,
+html[data-theme="dark"] .ms-card img, html[data-theme="dark"] .ms-thumb, html[data-theme="dark"] .post-thumb,
+html[data-theme="dark"] .post-fig img, html[data-theme="dark"] .bird, html[data-theme="dark"] .post-chart { border-color: var(--rule); }
+html[data-theme="dark"] .post-actions .sep { color: var(--rule); }
+html[data-theme="dark"] .feed { background: #101315; }
+html[data-theme="dark"] .post { background: var(--card); box-shadow: none; }
+html[data-theme="dark"] .post-pts, html[data-theme="dark"] .post-fig figcaption, html[data-theme="dark"] .bird-legend,
+html[data-theme="dark"] .post-cite .me, html[data-theme="dark"] .chart-title, html[data-theme="dark"] .post-chart figcaption,
+html[data-theme="dark"] .pd-body { color: #c8cecc; }
+html[data-theme="dark"] .pd-body { background: #171b1d; }
+html[data-theme="dark"] .feed-wrap.full .feed-bar { background: var(--card); }
+
+/* portal login page (StatiCrypt template) */
+html[data-theme="dark"] .staticrypt-body { background: var(--bg) !important; color: var(--text) !important; }
+html[data-theme="dark"] .staticrypt-form { background: var(--card) !important; box-shadow: none !important; }
+html[data-theme="dark"] .staticrypt-body p.staticrypt-title, html[data-theme="dark"] .staticrypt-instructions,
+html[data-theme="dark"] .staticrypt-remember { color: var(--text) !important; }
+html[data-theme="dark"] .staticrypt-hr { border-color: var(--rule) !important; }
+html[data-theme="dark"] .staticrypt-password-container { background: #262d30 !important; }
+html[data-theme="dark"] .staticrypt-form input[type=password], html[data-theme="dark"] .staticrypt-form input[type=text] { background: transparent !important; color: var(--text) !important; }
+html[data-theme="dark"] .staticrypt-decrypt-button { background: #2f8a94 !important; color: #fff !important; }
+html[data-theme="dark"] .sc-foot, html[data-theme="dark"] .sc-foot a, html[data-theme="dark"] .sc-foot .la-toggle { color: var(--muted); }
+html[data-theme="dark"] .sc-foot a:hover, html[data-theme="dark"] .sc-foot .la-toggle:hover,
+html[data-theme="dark"] .sc-foot .la-toggle[aria-expanded="true"] { color: var(--accent); }
+
+/* institution logos: a light backing so dark crests stay visible */
+html[data-theme="dark"] .timeline .logo { background: #e9ecea; padding: 2px; border-radius: 4px; box-sizing: content-box; }
+
+/* digest: floating Shuffle button and the inline charts */
+html[data-theme="dark"] .float-shuffle { background: var(--card); border-color: var(--rule); }
+html[data-theme="dark"] svg.chart [fill="#1d2327"] { fill: var(--text); }
+html[data-theme="dark"] svg.chart [fill="#5f676b"] { fill: var(--muted); }
+html[data-theme="dark"] svg.chart [fill="#1f6f78"] { fill: var(--accent); }
+html[data-theme="dark"] svg.chart [stroke="#1f6f78"] { stroke: var(--accent); }
+html[data-theme="dark"] svg.chart [stroke="#ebe5da"] { stroke: var(--rule); }
+html[data-theme="dark"] svg.chart [stroke="#9aa0a3"] { stroke: #6f787c; }
+html[data-theme="dark"] svg.chart text[fill="#fff"] { fill: var(--bg); }
+html[data-theme="dark"], html[data-theme="dark"] .staticrypt-content { background: var(--bg) !important; }
+html[data-theme="dark"] .staticrypt-toggle-password-visibility { filter: invert(0.75); }

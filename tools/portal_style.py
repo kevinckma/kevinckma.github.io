@@ -1,6 +1,8 @@
 import sys,re
 p=sys.argv[1];h=open(p).read()
 css='''<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/site.css">
+<script src="/site.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tinos&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
