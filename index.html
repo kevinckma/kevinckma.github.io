@@ -103,7 +103,7 @@
   }
   p { margin: 0 0 1rem; }
   #about > p, .about-intro > p {
-    text-align: justify; text-indent: 3em; font-size: 0.94rem;
+    text-align: justify; text-indent: 1.5em; font-size: 0.94rem;
     hyphens: auto; -webkit-hyphens: auto;
   }
 
@@ -237,7 +237,7 @@
   .abs p {
     margin: 0 0 0.5rem;
     font-size: 0.88rem; line-height: 1.6; color: var(--text);
-    text-indent: 3em;
+    text-indent: 1.5em;
     text-align: justify; hyphens: auto; -webkit-hyphens: auto;
   }
   .abs p:last-child { margin-bottom: 0; }
@@ -265,7 +265,7 @@
   .callout p:last-child { margin: 0; }
   .announce { margin: 0 0 1.5rem; font-size: 0.86rem; }
   .announce-list { margin: 2rem 0 0; }
-  .announce p { text-indent: 3em; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+  .announce p { text-indent: 1.5em; text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
   .announce-list ul { list-style: none; margin: 0; padding: 0; }
   .announce-list li { position: relative; padding: 0.15rem 0 0.15rem 1.2em; }
   .announce-list li::before {
@@ -319,6 +319,9 @@
     .timeline .what { grid-column: 1; }
     .timeline .logo { grid-column: 2; grid-row: 1 / span 2; }
     ol.pubs li { padding-left: calc(2.1rem + 1em); text-indent: -1em; }
+    #about > p, .about-intro > p, .abs p, .announce p { text-indent: 1em; }
+    .abs p.abs-h, .abs p.spub-oa { text-indent: 0; }
+    .abs p.spub-cite { padding-left: 1em; text-indent: -1em; }
     ol.pubs li > .abs { margin-left: -1em; }
     ol.pubs li::before { width: 1.6rem; }
   }
