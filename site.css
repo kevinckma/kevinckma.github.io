@@ -55,11 +55,10 @@ html[data-theme="dark"] nav.topnav .nav-links a:hover { color: var(--accent); }
 
 /* small arrow bullets */
 html[data-theme="dark"] .pub-summary span::before, html[data-theme="dark"] .announce-list li::before,
-html[data-theme="dark"] ul.res li::before, html[data-theme="dark"] .post-pts li::before { border-left-color: #59636a; }
+html[data-theme="dark"] ul.res li::before { border-left-color: #59636a; }
 
 /* light grey labels (Abstract, Open access, DOIs ...) */
-html[data-theme="dark"] .abs-toggle, html[data-theme="dark"] .oa, html[data-theme="dark"] .abs-supp a,
-html[data-theme="dark"] .pd-toggle, html[data-theme="dark"] .pd-doi { color: #8d9699; }
+html[data-theme="dark"] .abs-toggle, html[data-theme="dark"] .oa, html[data-theme="dark"] .abs-supp a { color: #8d9699; }
 html[data-theme="dark"] .abs-toggle:hover, html[data-theme="dark"] .abs-toggle[aria-expanded="true"],
 html[data-theme="dark"] .oa:hover, html[data-theme="dark"] .abs-supp a:hover { color: var(--accent); }
 
@@ -81,18 +80,8 @@ html[data-theme="dark"] .ms-fig, html[data-theme="dark"] .ms-pub-fig { backgroun
 html[data-theme="dark"] .ms-pub-fig:hover, html[data-theme="dark"] .ms-pub-fig:focus-visible { border-color: var(--accent); }
 html[data-theme="dark"] .ms-fig img, html[data-theme="dark"] .ms-pub-img img { background: #fff; border-radius: 4px; }
 
-/* portal: pills, thumbnails, feed and posts */
-html[data-theme="dark"] .links a, html[data-theme="dark"] .feed-shuffle, html[data-theme="dark"] .bird-presets button,
-html[data-theme="dark"] .ms-card img, html[data-theme="dark"] .ms-thumb, html[data-theme="dark"] .post-thumb,
-html[data-theme="dark"] .post-fig img, html[data-theme="dark"] .bird, html[data-theme="dark"] .post-chart { border-color: var(--rule); }
-html[data-theme="dark"] .post-actions .sep { color: var(--rule); }
-html[data-theme="dark"] .feed { background: #101315; }
-html[data-theme="dark"] .post { background: var(--card); box-shadow: none; }
-html[data-theme="dark"] .post-pts, html[data-theme="dark"] .post-fig figcaption, html[data-theme="dark"] .bird-legend,
-html[data-theme="dark"] .post-cite .me, html[data-theme="dark"] .chart-title, html[data-theme="dark"] .post-chart figcaption,
-html[data-theme="dark"] .pd-body { color: #c8cecc; }
-html[data-theme="dark"] .pd-body { background: #171b1d; }
-html[data-theme="dark"] .feed-wrap.full .feed-bar { background: var(--card); }
+/* portal: pills and thumbnails */
+html[data-theme="dark"] .links a, html[data-theme="dark"] .ms-card img, html[data-theme="dark"] .ms-thumb { border-color: var(--rule); }
 
 /* portal login page (StatiCrypt template) */
 html[data-theme="dark"] .staticrypt-body { background: var(--bg) !important; color: var(--text) !important; }
@@ -110,14 +99,5 @@ html[data-theme="dark"] .sc-foot .la-toggle[aria-expanded="true"] { color: var(-
 /* institution logos: a light backing so dark crests stay visible */
 html[data-theme="dark"] .timeline .logo { background: #e9ecea; padding: 2px; border-radius: 4px; box-sizing: content-box; }
 
-/* digest: floating Shuffle button and the inline charts */
-html[data-theme="dark"] .float-shuffle { background: var(--card); border-color: var(--rule); }
-html[data-theme="dark"] svg.chart [fill="#1d2327"] { fill: var(--text); }
-html[data-theme="dark"] svg.chart [fill="#5f676b"] { fill: var(--muted); }
-html[data-theme="dark"] svg.chart [fill="#1f6f78"] { fill: var(--accent); }
-html[data-theme="dark"] svg.chart [stroke="#1f6f78"] { stroke: var(--accent); }
-html[data-theme="dark"] svg.chart [stroke="#ebe5da"] { stroke: var(--rule); }
-html[data-theme="dark"] svg.chart [stroke="#9aa0a3"] { stroke: #6f787c; }
-html[data-theme="dark"] svg.chart text[fill="#fff"] { fill: var(--bg); }
 html[data-theme="dark"], html[data-theme="dark"] .staticrypt-content { background: var(--bg) !important; }
 html[data-theme="dark"] .staticrypt-toggle-password-visibility { filter: invert(0.75); }

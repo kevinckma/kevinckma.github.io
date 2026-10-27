@@ -20,7 +20,7 @@ No passwords are stored in this folder.
 
 ## Shared site.css / site.js
 
-Every page (main site, the three portal pages and their login pages) loads `/site.css` and `/site.js`.
+Every page (main site, the two portal pages (Manuscripts, Resources) and their login pages) loads `/site.css` and `/site.js`.
 They provide the light/dark theme (light by default; dark only after a visitor clicks the nav button,
 then remembered in localStorage across all pages), the "Skip to content" link, and keyboard
 access to enlargeable images and their popups. `portal_style.py` adds the two tags to login pages;

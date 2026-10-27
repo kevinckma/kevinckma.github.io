@@ -50,8 +50,8 @@
   }
 
   // Enlargeable images and the popups that show them
-  var ZOOM = '.abs-thumb, .zoomable, .sphoto, .ms-fig img, .ms-pub-fig img, .post-fig img';
-  var DIALOGS = '#lightbox, #lb, #ms-lb';
+  var ZOOM = '.abs-thumb, .zoomable, .sphoto, .ms-fig img, .ms-pub-fig img';
+  var DIALOGS = '#lightbox, #ms-lb';
   function markZoomables() {
     document.querySelectorAll(ZOOM).forEach(function (el) {
       if (el.hasAttribute('data-kb')) return;
@@ -102,7 +102,7 @@
   function init() {
     addToggle(); addSkipLink(); markZoomables();
     document.querySelectorAll(DIALOGS).forEach(setupDialog);
-    var pending = false;   // pages that add images later (e.g. the digest feed)
+    var pending = false;   // pages that add images later
     new MutationObserver(function () {
       if (pending) return; pending = true;
       setTimeout(function () { pending = false; markZoomables(); document.querySelectorAll(DIALOGS).forEach(setupDialog); }, 50);
