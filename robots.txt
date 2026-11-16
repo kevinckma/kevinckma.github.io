@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /research/
+Allow: /
+
+Sitemap: https://kevinckma.github.io/sitemap.xml
